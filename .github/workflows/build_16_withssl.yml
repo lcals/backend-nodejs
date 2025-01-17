@@ -34,11 +34,11 @@ jobs:
       shell: bash
       run: |
         mv puerts-node/nodejs puerts-node/nodejs_16
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: nodejs_bin
         path: puerts-node/**/*
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: nodejs_bin_win_x64
         path: ~/puerts-node/**/*
@@ -293,7 +293,7 @@ jobs:
           
       - name: Upload nodejs_bin
         #id: upload-release-asset 
-        uses: actions/upload-release-asset@v2
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
